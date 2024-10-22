@@ -1,0 +1,263 @@
+body {
+    font-family: "Corbel";
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+: hover {
+    border-color: deeppink;
+}
+
+.cursor-p {
+    cursor: default;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.hov:hover {
+    color: black;
+    border-bottom: 3px solid deeppink;
+    color: deeppink;
+    transition: 0.5s ease-in-out;
+    font-size: 10px;
+}
+
+.font {
+    font-size: 23px;
+}
+
+/*Custom utilities*/
+.h-200 {
+    height: 1000px;
+}
+
+.bg-img-1 {
+    background-image: url(../media/images/slider/tiele.jpg);
+    transition: 0.4s;
+}
+
+.bg-img-2 {
+    background-image: url(../media/images/slider/1.jpg);
+
+}
+
+.bg-img-3 {
+    background-image: url(../media/images/slider/airpeace.jpg);
+    color: white;
+    padding: 20px;
+}
+
+.bg-img-4 {}
+
+.bg-img-4 {}
+
+.bg-theme {
+    background-color: red;
+    color: white;
+}
+
+.bg-brown {
+    background-color: #BB4743;
+}
+
+.group {
+    text-decoration: none;
+    list-style: none;
+}
+
+.edit {
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 2px;
+
+}
+
+.bg-white {
+    background-color: #f4f8f8;
+}
+
+.bg-darkblue {
+    background-color: #004296;
+    color: white;
+}
+
+.bg-lgrey {
+    background-color: lightgray;
+}
+
+.bg-blue {
+    background-color: black;
+}
+
+.bg-smoke {
+    background-color: whitesmoke;
+}
+
+
+.bg-deeppink {
+    background-color: deeppink;
+}
+
+.badge-theme {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.text-theme {
+    color: red;
+}
+
+.text-blue {
+    color: #004296;
+}
+
+.bt-theme-1 {
+    border-top: 1px solid red;
+}
+
+.bt-theme-2 {
+    border-top: 2px solid red;
+}
+
+.bt-theme-3 {
+    border-top: 3px solid red;
+}
+
+.bb-theme-1 {
+    border-bottom: 1px solid red;
+}
+
+.bb-theme-2 {
+    border-bottom: 2px solid red;
+}
+
+.bb-theme-3 {
+    border-bottom: 3px solid red;
+}
+
+.text-deeppink {
+    color: deeppink;
+}
+
+.br-5 {
+    border-radius: 5px;
+}
+
+.br-10 {
+    border-radius: 10px;
+}
+
+.br-10 {
+    border-radius: 10px;
+}
+
+.br-25 {
+    border-radius: 25px;
+}
+
+.br-50 {
+    border-radius: 50px;
+}
+
+.br-tl-5 {
+    border-top-left-radius: 15px;
+}
+
+.br-tr-5 {
+    border-top-right-radius: 15px;
+}
+
+.subhov:hover {
+    border: 1px solid #004296;
+    background-color: white;
+    color: #004296;
+}
+
+.btn-black {
+    background-color: deeppink;
+    color: white;
+    border-color: transparent;
+    padding: 7px;
+}
+
+.btn-black:hover {
+    background-color: white;
+    color: deeppink;
+    border-color: transparent;
+    padding: 7px;
+}
+
+.scroll {
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.c-btn-sm {
+    padding: 2px 5px 2px 5px;
+    border-radius: 3px;
+}
+
+.c-btn-md {
+    padding: 10px;
+}
+
+.c-btn-lg {
+    padding: 15px;
+}
+
+.btn-1 {
+    margin-top: 100px;
+}
+
+.btn-b {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.contact {
+    margin-top: 170px;
+    margin-left: 100px;
+}
+
+.section-sm {
+    padding: 20px 0 20px;
+}
+
+.section-md {
+    padding: 40px 0;
+}
+
+.section-lg {
+    padding: 60px 0 60;
+}
+
+.section-parallax {
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+
+.c-card-header {
+    /*    top,right,left,bottom*/
+    padding: 10px 3px 10px 13px;
+}
+
+.card-caption {
+    color: white;
+    position: absolute;
+    left: 10px;
+    bottom: 2%
+}
+
+
+.bg-box {
+    min-height: 400px;
+    opacity: 0.4;
+}

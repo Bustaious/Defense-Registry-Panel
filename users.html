@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure System</title>
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="visuals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="assets/bootstrap/bootstrap-4.5.2-dist/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/bootstrap-4.5.2-dist/popper.js-1.16.1/package/dist/popper.min.js"></script>
+    <script src="assets/bootstrap/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+    <header>
+        <img src="images/generic_logo-removebg-preview.png" alt="Logo" class="logo">
+        <h1>C.O.D</h1>
+    
+        <a id="showUserLoginModal" href="index.html">Admin Page</a>
+    
+        <button id="showLoginModalBtn">Login</button>
+    
+        <button id="showRegisterModal" onclick="showLoginUserModal()">Register</button>
+    
+        
+        <div class="notification-icon" onclick="toggleNotificationContent()">
+            
+            <i class="fas fa-bell"></i>
+        </div>
+    
+        
+        <div id="notificationContent" class="notification-content" style="display: none;">
+            <!-- Notification items will be dynamically added here -->
+            <!-- Example: -->
+            <div class="notification-item">
+                <p>New message received</p>
+            </div>
+            <div class="notification-item">
+                <p>Task deadline approaching</p>
+            </div>
+        </div>
+        </div>
+    </header>
+    
+
+
+    
+    <div id="loginModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="loginFormModal">
+                <label for="usernameModal">Username:</label>
+                <input type="text" id="usernameModal" name="username" required>
+              
+                <label for="passwordModal">Password:</label>
+                <input type="password" id="passwordModal" name="password" required>
+              
+                <button type="submit">Login</button>
+              </form>
+            <div class="modal-message" id="modalMessageModal"></div>
+        </div>
+    </div>
+
+
+
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const showLoginModalBtn = document.getElementById("showLoginModalBtn");
+    const loginModal = document.getElementById("loginModal");
+
+    // Function to show the login modal
+    function showLoginModal() {
+        loginModal.style.display = "block";
+    }
+
+    // Function to hide the login modal
+    function closeLoginModal() {
+        loginModal.style.display = "none";
+    }
+
+    // Add click event to the "Login" button
+    showLoginModalBtn.addEventListener("click", showLoginModal);
+
+    // Add click event to the close button inside the modal
+    const closeBtn = document.querySelector("#loginModal .close");
+    closeBtn.addEventListener("click", closeLoginModal);
+});
+
+    </script>
+
+
+    
+<div id="userModal" class="usmodal">
+    <div class="usmodal-content">
+        <span class="close" onclick="closeUserModal()">&times;</span>
+        <h2>Register</h2>
+        <div class="grid-container">
+            <form method="post" action="adduser.php">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+        
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+    
+    <div id="popupModal" style="display: none;">
+        <div id="popupContent"></div>
+        <button id="closePopupButton">Close</button>
+    </div>
+        
+                <div class="g-recaptcha" data-sitekey="6Ldwm00nAAAAAIGWemOYGTjXhuyS9Tyoc9SXa6-V"></div>
+        
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+    <script>
+        // Function to show the login user modal
+        function showLoginUserModal() {
+            var modal = document.getElementById("userModal");
+            modal.style.display = "block";
+        }
+    
+        // Function to close the login user modal
+        function closeUserModal() {
+            var modal = document.getElementById("userModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    
+<section>
+    <div class="user-profile-panel">
+        <img class="profile-picture" src="images/blank profile.png" alt="Profile Picture">
+        <div class="user-name"><?php echo $isLoggedIn ? $_SESSION['username'] : 'User'; ?></div>
+        <?php if ($isLoggedIn): ?>
+            <div class="user-details">Student at XYZ University</div>
+            <div class="user-details">Major: <?php echo $_SESSION['major']; ?></div>
+            <div class="user-details">Email: <?php echo $_SESSION['email']; ?></div>
+            <button class="action-button">View Courses</button>
+            <button class="action-button">Grades</button>
+            <button class="action-button">Edit Profile</button>
+            <button class="action-button">Change Password</button>
+        <?php endif; ?>
+    </div>
+</section>
+
+<script>
+    // Your JavaScript code here
+
+    // Function to update the header elements based on login status
+    function updateHeader() {
+        const loginButton = document.getElementById('showLoginModalBtn');
+        const registerButton = document.getElementById('showRegisterModal');
+        const adminLink = document.getElementById('showUserLoginModal');
+
+        if (isLoggedIn) {
+            loginButton.style.display = 'none';
+            registerButton.style.display = 'none';
+            adminLink.style.display = 'block'; // Show admin link when logged in
+        } else {
+            loginButton.style.display = 'block';
+            registerButton.style.display = 'block';
+            adminLink.style.display = 'none'; // Hide admin link when not logged in
+        }
+    }
+
+    
+    updateHeader();
+
+    
+    function toggleNotificationContent() {
+        const notificationContent = document.getElementById('notificationContent');
+        notificationContent.style.display = notificationContent.style.display === 'none' ? 'block' : 'none';
+    }
+
+   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-media-icons">
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                
+            </div>
+            <div class="firm-name">
+                College of Defense
+            </div>
+        </div>
+    </footer>
+    
+    <script src="popin.js"></script>
+    <script src="script.js"></script>
+    <script src="open.js"></script>
+    <script src="pop.js"></script>
+    <script src="notif.js"></script>
+    <script src="res.js"></script>
+</body>
+</html>

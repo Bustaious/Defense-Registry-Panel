@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure System</title>
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="visuals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="assets/bootstrap/bootstrap-4.5.2-dist/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/bootstrap-4.5.2-dist/popper.js-1.16.1/package/dist/popper.min.js"></script>
+    <script src="assets/bootstrap/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <header>
+    
+
+        <img src="images/generic_logo-removebg-preview.png" alt="Logo" class="logo">
+            <h1>C.O.D</h1>
+
+            <a id="showUserLoginModal" href="users.html" >User Page</a>
+            
+            <button id="showLoginModalBtn" onclick="showLoginModal()">Login as Admin</button>
+
+            <button id="showAdminModalBtn">Register as Admin</button>
+
+            
+            
+    </header>
+    
+    <main>
+
+
+
+        <div id="adminModal" class="admodal">
+            <div class="admodal-content">
+                <span class="close" onclick="closeAdminModal()">&times;</span>
+                <h2>Admin Registration</h2>
+                <form id="adminFormModal" method="post" action="addadmin.php">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <div class="g-recaptcha" data-sitekey="6Ldwm00nAAAAAIGWemOYGTjXhuyS9Tyoc9SXa6-V"></div>
+    
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        
+    
+       
+        <script>
+            // Function to show the admin registration modal
+            function showAdminModal() {
+                const adminModal = document.getElementById("adminModal");
+                adminModal.style.display = "block";
+            }
+    
+            // Function to close the admin registration modal
+            function closeAdminModal() {
+                const adminModal = document.getElementById("adminModal");
+                adminModal.style.display = "none";
+            }
+    
+            document.getElementById("showAdminModalBtn").addEventListener("click", function(event) {
+                event.preventDefault();
+                showAdminModal();
+            });
+        </script>
+
+
+        <div id="loginModal" class="modal">
+          
+            <div class="modal-content">
+              <span class="close" onclick="closeLoginModal()">&times;</span>
+              <h2>Admin Login</h2>
+              <form id="loginFormModal">
+                <label for="username">Username:</label>
+                <input type="text" id="usernameModal" name="username" required>
+          
+                <label for="password">Password:</label>
+                <input type="password" id="passwordModal" name="password" required>
+          
+                <button type="submit">Login</button>
+              </form>
+              <div class="modal-message" id="modalMessageModal"></div>
+            </div>
+          </div>
+
+       
+        <section id="dashboard">
+            <h2>Users</h2>
+ 
+
+
+
+<div class="user-activity">
+    <h3>User Activity Statistics</h3>
+    <ul>
+        <li><i class="far fa-user"></i> Total Users: <span id="total-users"></span></li>
+        <li><i class="fas fa-user-check"></i> Active Users: <span id="active-users"></span></li>
+        <li><i class="fas fa-user-times"></i> Inactive Users: <span id="inactive-users"></span></li>
+    </ul>
+</div>
+
+<!-- JavaScript to fetch and populate data -->
+<script>
+    $(document).ready(function() {
+        $.getJSON('get_user_stats.php', function(data) {
+            // Update the content of the spans with the fetched data
+            $('#total-users').text(data.total_users);
+            $('#active-users').text(data.active_users);
+            $('#inactive-users').text(data.inactive_users);
+        });
+    });
+</script>
+
+        
+            <div class="recent-logins">
+                <h3>Recent User Logins</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Login Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>JohnDoe</td>
+                            <td>2023-07-26 10:15:21</td>
+                        </tr>
+                        <tr>
+                            <td>JaneSmith</td>
+                            <td>2023-07-25 15:42:09</td>
+                        </tr>
+                        <!-- Add more recent login entries here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="adminPanel">
+            <h2>Admin Panel</h2>
+            <div class="admin-actions">
+                <button class="action-btn">Add User</button>
+                <button class="action-btn">Delete User</button>
+                <button class="action-btn">Edit Permissions</button>
+            </div>
+            <div class="admin-logs">
+                <h3>System Logs</h3>
+                <ul>
+                    <li>User 'JohnDoe' logged in.</li>
+                    <li>User 'JaneSmith' accessed sensitive data.</li>
+                    <!-- Add more log items here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-media-icons">
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <!-- Add more social media icons as needed -->
+            </div>
+            <div class="firm-name">
+                College of Defense
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Include any necessary JavaScript files here -->
+    <script src="script.js"></script>
+    <script src="open.js"></script>
+    <script src="popin.js"></script>
+    <script src="mes.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,745 @@
+/* Styles for the whole page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#showLoginBtn {
+  background-color: aquamarine;
+
+}
+
+.usmodal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content */
+.usmodal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Style for the modal */
+.admodal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content */
+.admodal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style for the header */
+h1 {
+  margin: 0;
+  padding: 10px;
+  background-color: darkcyan;
+  color: white;
+  text-align: center;
+}
+
+#showUserLoginModal {
+  background-color: darkorchid;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#showUserLoginModal:hover {
+  background-color: palevioletred;
+}
+
+#showRegisterModal {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#showRegisterModal:hover {
+  background-color: #008080;
+}
+
+/* Style for the register button */
+#showAdminModalBtn {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#showAdminModalBtn:hover {
+  background-color: #008080;
+}
+
+/* Other styles as needed for your specific application */
+
+
+
+
+#popupContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.popup-message {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+
+
+
+
+/* Styles for the header */
+header {
+  background-color: purple;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#showLoginModalBtn {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#showLoginModalBtn:hover {
+  background-color: #00bfff;
+}
+
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/*main content area */
+main {
+  padding: 20px;
+}
+
+/*login section */
+#login {
+  background-color: transparent; 
+  color: black; 
+  box-shadow: none; 
+  padding: 0;
+  margin: 0; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login h2 {
+  font-size: 24px; 
+  margin-bottom: 20px; 
+}
+
+
+#adminmodal {
+  width: 100%;
+}
+
+#adminmodal label {
+  color: #555;
+  font-size: 18px; 
+  margin-bottom: 8px; 
+}
+
+#adminmodal input[type="text"],
+#adminmodal input[type="password"] {
+  padding: 10px;
+}
+
+#adminmodal button {
+  background-color: darkcyan; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px; 
+}
+
+#adminmodal button:hover {
+  background-color: #008080; /
+}
+
+
+
+#loginForm {
+  width: 100%;
+}
+
+#loginForm label {
+  color: #555;
+  font-size: 18px; 
+  margin-bottom: 8px; 
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+  padding: 10px;
+}
+
+#loginForm button {
+  background-color: darkcyan; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px; 
+}
+
+#loginForm button:hover {
+  background-color: #008080; /
+}
+
+
+/* Styles for the footer */
+footer {
+  background-color: purple;
+  color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+}
+
+.social-media-icons {
+  margin-right: 10px;
+}
+
+.social-icon {
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.firm-name {
+  font-size: 18px;
+}
+
+/* Styles for the dashboard section */
+#dashboard {
+  background-color: white;
+  border: 2px solid purple;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#dashboard h2 {
+  font-size: 24px;
+}
+
+.user-activity,
+.recent-logins {
+  margin-bottom: 20px;
+}
+
+.user-activity h3,
+.recent-logins h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.recent-logins table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-logins th,
+.recent-logins td {
+  border: 1px solid purple;
+  padding: 8px;
+}
+
+.recent-logins th {
+  background-color: purple;
+  color: white;
+}
+
+.recent-logins td {
+  text-align: center;
+}
+
+/* Styles for the admin panel section */
+#adminPanel {
+  background-color: white;
+  border: 2px solid purple;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#adminPanel h2 {
+  font-size: 24px;
+}
+
+.admin-actions {
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.admin-logs ul {
+  list-style: none;
+  border: 2px solid purple;
+  padding: 10px;
+}
+
+.admin-logs li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Styles for the main content area */
+main {
+  padding: 20px;
+}
+
+
+.g-recaptcha {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-recaptcha div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#adminModal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#adminModal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#adminModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#adminModal .close:hover,
+#adminModal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#adminModal h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#adminModal label {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#adminModal input[type="text"],
+#adminModal input[type="password"] {
+  padding: 10px;
+}
+
+#adminModal button {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#adminModal button:hover {
+  background-color: #008080;
+}
+
+
+
+
+
+
+
+
+
+
+
+#userModal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#userModal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#userModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#userModal .close:hover,
+#userModal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#userModal h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#userModal label {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#userModal input[type="text"],
+#userModal input[type="password"] {
+  padding: 10px;
+}
+
+#userModal button {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#userModal button:hover {
+  background-color: #008080;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#loginModal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#loginModal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#loginModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#loginModal .close:hover,
+#loginModal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#loginModal h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#loginModal label {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#loginModal input[type="text"],
+#loginModal input[type="password"] {
+  padding: 10px;
+}
+
+#loginModal button {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#loginModal button:hover {
+  background-color: #008080;
+}
+
+
+
+/* Styles for the main content area */
+main {
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+ /* Styles for the user profile panel */
+ .user-profile-panel {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid purple;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Style for the profile picture */
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid purple;
+  margin-bottom: 10px;
+}
+
+/* Style for the user's name */
+.user-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: purple;
+  margin-bottom: 10px;
+}
+
+/* Style for user details */
+.user-details {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Style for action buttons */
+.action-button {
+  padding: 8px 16px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.action-button:hover {
+  background-color: #7e57c2;
+}
+
+.grid-container {
+  display: flex;
+
+}
+
+
+form label, form input, form button, .g-recaptcha {
+ padding: 10px;
+display: flex; 
+}
+
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.notification-icon:hover {
+  background-color: #00bfff;
+}
+
+.notification-icon i {
+  font-size: 20px; 
+  color: #f3aaaa; 
+}
+
+
+
+.notification-content {
+  z-index: 2;
+  position: absolute;
+  top: 0%; 
+  right: 3%; 
+  width: 200px; 
+  color: #4b2a2a;
+  background-color: #fceded; 
+  border: 1px solid rgb(219, 209, 209); 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  padding: 10px; 
+  display: none; 
+}
+
+.notification-item {
+  padding: 5px;
+}
